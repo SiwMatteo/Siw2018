@@ -30,7 +30,7 @@ public class Azienda {
 
 	
 	@OneToOne
-	private ResponsabileCentro responsabile;
+	private Responsabile responsabile;
 
 	public long getId() {
 		return id;
@@ -72,11 +72,11 @@ public class Azienda {
 		this.centri = centri;
 	}
 
-	public ResponsabileCentro getResponsabile() {
+	public Responsabile getResponsabile() {
 		return responsabile;
 	}
 
-	public void setResponsabile(ResponsabileCentro responsabile) {
+	public void setResponsabile(Responsabile responsabile) {
 		this.responsabile = responsabile;
 	}
 
