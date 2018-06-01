@@ -9,8 +9,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 import it.uniroma3.spring.model.Centro;
-import it.uniroma3.spring.model.Responsabile;
-import it.uniroma3.spring.service.ResponsabileService;
+
+
 
 @SpringBootApplication
 public class DemoApplication extends SpringBootServletInitializer{
@@ -25,12 +25,7 @@ public class DemoApplication extends SpringBootServletInitializer{
     }
     
   
-    
-    @Autowired
-    private ResponsabileService responsabileService;
-    
-    @PostConstruct
-    public void prova(){
+  
   
   
     }
@@ -39,4 +34,3 @@ public class DemoApplication extends SpringBootServletInitializer{
 
     
    
-}
