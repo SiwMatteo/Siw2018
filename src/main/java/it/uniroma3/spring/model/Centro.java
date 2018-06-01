@@ -28,7 +28,7 @@ public class Centro {
 	private String email;
 	
 	@OneToMany(mappedBy="centro")
-	private List<ResponsabileCentro> responsabili;
+	private List<Responsabile> responsabili;
 	
 	@ManyToOne
 	private Azienda azienda;
@@ -61,10 +61,10 @@ public class Centro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<ResponsabileCentro> getResponsabili() {
+	public List<Responsabile> getResponsabili() {
 		return responsabili;
 	}
-	public void setResponsabili(List<ResponsabileCentro> responsabili) {
+	public void setResponsabili(List<Responsabile> responsabili) {
 		this.responsabili = responsabili;
 	}
 	public List<Attivita> getAttivita() {
