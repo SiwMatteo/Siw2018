@@ -15,13 +15,20 @@ public class ResponsabileService {
 	private ResponsabileRepository responsabileRepository;
 
 	@Transactional
-	public void add(Allievo allievo) {
-		this.responsabileRepository.save(allievo);
+	public void add(Responsabile responsabile) {
+		this.responsabileRepository.save(responsabile);
 	}
 
 	public Responsabile findOne(String email) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Responsabile findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return responsabileRepository.findByEmail(email);
+	}
+
+
 
 }
