@@ -34,6 +34,11 @@ public class MainController {
 		return "login";
 
 	}
+	
+	@RequestMapping("/info")
+	public String PageInfo() {
+		return "info";
+	}
 
 	@RequestMapping("/processlogin")
 	public String ProcessLogin(@Valid @ModelAttribute("responsabile") Responsabile responsabile,

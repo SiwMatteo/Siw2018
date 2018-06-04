@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MF Activity Corp</title>
+<title>MF Info</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -23,10 +23,10 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
+						<li><a href="/" accesskey="1" title="">Homepage</a></li>
 						<li><a href="login" accesskey="2" title="">Login
 								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
+						<li class="active"><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>
@@ -34,12 +34,8 @@
 	</div>
 	<div id="page-wrapper">
 		<div id="welcome" class="container">
-			<div class="title">
-				<h2>Benvenuti sul nostro sito</h2>
-			</div>
-			<p>MF Activity Corporation è un'azienda specializzata nei corsi
-				di formazione, ed è distribuita in vari centri.</p>
-			<img src="images/banner.jpg" class="image image-full" alt="" />
+			<p>Sito realizzato da Francesco Forgione e Matteo De Santis detto il Pelato, per il progetto del corso di
+			Sistemi Informativi su Web, dell'anno accademico 2017/2018</p>
 		</div>
 	</div>
 	<div id="copyright" class="container">
