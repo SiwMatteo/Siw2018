@@ -31,13 +31,21 @@ public class DemoApplication extends SpringBootServletInitializer{
   @PostConstruct
   public void inserisci() {
 	  Responsabile responsabile=new Responsabile();
+	  Responsabile responsabile1=new Responsabile();
 	  responsabile.setEmail("prova@prova.it");
 	  responsabile.setPassword("prova");
 	  responsabile.setNome("Matteo");
 	  responsabile.setCognome("De Santis");
 	  responsabile.setRuolo("direttore");
 	  responsabile.setNumero(1223445);
+	  responsabile1.setEmail("prova1@prova.it");
+	  responsabile1.setPassword("prova1");
+	  responsabile1.setNome("Francesco");
+	  responsabile1.setCognome("De Santis");
+	  responsabile1.setRuolo("responsabile");
+	  responsabile1.setNumero(1223445);
 	  responsabileService.add(responsabile);
+	  responsabileService.add(responsabile1);
   }
   
   

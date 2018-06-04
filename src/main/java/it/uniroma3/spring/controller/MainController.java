@@ -44,7 +44,8 @@ public class MainController {
 		} else {
 			try {
 				Responsabile c = responsabileService.findByEmail(responsabile.getEmail());
-		
+		System.out.println(c.getEmail());
+		System.out.println(c.getPassword());
 				if (responsabile.getPassword().equals(c.getPassword())) {
 					if (c.getRuolo().equals("direttore")) {
 						return "pagina-iniziale-azienda";
