@@ -34,8 +34,8 @@ public class Responsabile {
 
 	@Column(nullable = false)
 	private String ruolo;
-	@ManyToOne
-	private Centro centro;
+//	@ManyToOne
+	//private Centro centro;
 	
 	
 	
@@ -96,12 +96,12 @@ public class Responsabile {
 		this.ruolo = ruolo;
 	}
 
-	public Centro getCentro() {
+	/*public Centro getCentro() {
 		return centro;
 	}
 
 	public void setCentro(Centro centro) {
 		this.centro = centro;
 	}
-
+*/
 }

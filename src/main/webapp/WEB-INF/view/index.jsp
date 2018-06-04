@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+f<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -26,9 +26,16 @@
 				<div id="menu">
 					<ul>
 						<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
+<<<<<<< HEAD
 						<li><a href="#" accesskey="2" title="">Login Responsabile</a></li>
 						<li><a href="#" accesskey="3" title="">Centri</a></li>
 						<li><a href="#" accesskey="4" title="">Attività</a></li>
+=======
+						<li><a href="login" accesskey="2" title="">Login Responsabile</a></li>
+						<li><a href="#" accesskey="3" title="">About Us</a></li>
+						<li><a href="#" accesskey="4" title="">Careers</a></li>
+						<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+>>>>>>> prova1
 					</ul>
 				</div>
 			</div>
