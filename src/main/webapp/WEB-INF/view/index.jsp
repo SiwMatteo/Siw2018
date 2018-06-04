@@ -11,10 +11,8 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
 	rel="stylesheet" />
-<link href="default.css"
-	rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css"
-	rel="stylesheet" type="text/css" media="all" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div id="header-wrapper">
@@ -25,17 +23,11 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-<<<<<<< HEAD
-						<li><a href="#" accesskey="2" title="">Login Responsabile</a></li>
-						<li><a href="#" accesskey="3" title="">Centri</a></li>
-						<li><a href="#" accesskey="4" title="">Attività</a></li>
-=======
-						<li><a href="login" accesskey="2" title="">Login Responsabile</a></li>
+						<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li><li><a href="login" accesskey="2" title="">Login
+								Responsabile</a></li>
 						<li><a href="#" accesskey="3" title="">About Us</a></li>
 						<li><a href="#" accesskey="4" title="">Careers</a></li>
 						<li><a href="#" accesskey="5" title="">Contact Us</a></li>
->>>>>>> prova1
 					</ul>
 				</div>
 			</div>
@@ -46,9 +38,8 @@
 			<div class="title">
 				<h2>Benvenuti sul nostro sito</h2>
 			</div>
-			<p>
-				MF Activity Corporation è un'azienda specializzata nei corsi di formazione, ed è distribuita in vari centri.
-			</p>
+			<p>MF Activity Corporation è un'azienda specializzata nei corsi
+				di formazione, ed è distribuita in vari centri.</p>
 			<img src="images/banner.jpg" class="image image-full" alt="" />
 		</div>
 	</div>
