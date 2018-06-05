@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,6 +28,10 @@ public class Attivita{
 	
 	@Temporal(TemporalType.DATE)
 	private Date data;
+	
+	@ManyToOne
+	private Centro centro;
+	
 	
 	@OneToMany
 	private List<Allievo> allievi;
@@ -71,52 +76,15 @@ public class Attivita{
 		this.allievi = allievi;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((allievi == null) ? 0 : allievi.hashCode());
-		result = prime * result + ((data == null) ? 0 : data.hashCode());
-		result = prime * result + ((descrizione == null) ? 0 : descrizione.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+	public Centro getCentro() {
+		return centro;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Attivita other = (Attivita) obj;
-		if (allievi == null) {
-			if (other.allievi != null)
-				return false;
-		} else if (!allievi.equals(other.allievi))
-			return false;
-		if (data == null) {
-			if (other.data != null)
-				return false;
-		} else if (!data.equals(other.data))
-			return false;
-		if (descrizione == null) {
-			if (other.descrizione != null)
-				return false;
-		} else if (!descrizione.equals(other.descrizione))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
+	public void setCentro(Centro centro) {
+		this.centro = centro;
 	}
-	
+
+
 	
 	
 	

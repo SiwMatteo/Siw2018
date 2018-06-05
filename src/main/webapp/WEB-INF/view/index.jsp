@@ -23,20 +23,12 @@
 				</h1>
 				<div id="menu">
 					<ul>
-<<<<<<< Updated upstream
-						<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li><li><a href="login" accesskey="2" title="">Login
-								Responsabile</a></li>
-						<li><a href="#" accesskey="3" title="">About Us</a></li>
-						<li><a href="#" accesskey="4" title="">Careers</a></li>
-						<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-=======
 						<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-
 						<li><a href="login" accesskey="2" title="">Login Responsabile</a></li>
 						<li><a href="#" accesskey="3" title="">Centri</a></li>
 						<li><a href="#" accesskey="4" title="">Attività</a></li>
 				
->>>>>>> Stashed changes
+
 					</ul>
 				</div>
 			</div>

@@ -28,8 +28,7 @@ public class Azienda {
 	@OneToMany(mappedBy="azienda")
 	private List<Centro> centri;
 
-	
-	@OneToOne
+	@OneToOne 
 	private Responsabile responsabile;
 
 	public long getId() {
@@ -79,5 +78,9 @@ public class Azienda {
 	public void setResponsabile(Responsabile responsabile) {
 		this.responsabile = responsabile;
 	}
+	public void AggiungiCentro(Centro centro) {
+	this.centri.add(centro)	;
+	}
+	
+	}
 
-}

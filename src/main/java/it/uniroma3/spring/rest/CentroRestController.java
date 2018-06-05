@@ -18,7 +18,7 @@ public class CentroRestController {
 	
     @RequestMapping("/rest/centro/{id}")
     public Centro getCentro(@PathVariable Long id) {
-        return centroService.findOne(id);
+        return centroService.findById(id);
     
 
 }

@@ -33,13 +33,15 @@ public class AttivitaService {
 	}
 
 	public void deleteById(Long arg0) {
-		// TODO Auto-generated method stub
-
+		this.attivitaRepository.delete(arg0);
 	}
 
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-
+		this.attivitaRepository.deleteAll();
+	}
+	
+	public void delete(Attivita attivita) {
+		this.attivitaRepository.delete(attivita);
 	}
 
 }

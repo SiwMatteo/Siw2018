@@ -27,14 +27,14 @@ public class Centro {
 	@Column
 	private String email;
 	
-	/*@OneToMany(mappedBy="centro")
+	@OneToMany(mappedBy="centro")
 	private List<Responsabile> responsabili;
-	*/
+	
 	@ManyToOne
 	private Azienda azienda;
 	
 
-	@OneToMany
+	@OneToMany(mappedBy="centro")
 	private List<Attivita> attivita;
 	
 	public int getId() {
@@ -61,19 +61,24 @@ public class Centro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-/*	public List<Responsabile> getResponsabili() {
+	public List<Responsabile> getResponsabili() {
 		return responsabili;
 	}
 	public void setResponsabili(List<Responsabile> responsabili) {
 		this.responsabili = responsabili;
-	}*/
+	}
 	public List<Attivita> getAttivita() {
 		return attivita;
 	}
 	public void setAttivita(List<Attivita> attivita) {
 		this.attivita = attivita;
 	}
+	public void AggiungiResponsabile(Responsabile res) {
+		this.responsabili.add(res);
+	}
 	
-	
+	public void AggiungiAttivita(Attivita attivita) {
+		this.attivita.add(attivita);
+	}
 	
 }

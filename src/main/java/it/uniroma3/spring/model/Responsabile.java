@@ -3,7 +3,7 @@ package it.uniroma3.spring.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -34,8 +34,11 @@ public class Responsabile {
 
 	@Column(nullable = false)
 	private String ruolo;
-//	@ManyToOne
-	//private Centro centro;
+	
+	@OneToOne
+	private Centro centro;
+	
+	private Azienda azienda;
 	
 	
 	
@@ -96,12 +99,25 @@ public class Responsabile {
 		this.ruolo = ruolo;
 	}
 
-	/*public Centro getCentro() {
+
+
+	public Azienda getAzienda() {
+		return azienda;
+	}
+
+
+
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
+	}
+
+	public Centro getCentro() {
 		return centro;
 	}
 
 	public void setCentro(Centro centro) {
 		this.centro = centro;
 	}
-*/
+
+	
 }

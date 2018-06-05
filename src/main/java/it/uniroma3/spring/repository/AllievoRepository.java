@@ -6,11 +6,17 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.spring.model.Allievo;
 
+public interface AllievoRepository extends CrudRepository<Allievo, String> {
+	
+	List<Allievo> findByNome(String nome);
 
-public interface AllievoRepository extends CrudRepository<Allievo, String>{
-	 	List<Allievo> findByNome(String nome);
+	List<Allievo> findByCognome(String cognome);
 
-	    List<Allievo> findByCognome(String cognome);
-	    
-	    Allievo findByCodiceFiscale(String codiceFiscale);
+	Allievo findByCodiceFiscale(String codiceFiscale);
+
+	void deleteByCodiceFiscale(String codiceFiscale);
+	
+	void delete(Allievo allievo);
+
+
 }

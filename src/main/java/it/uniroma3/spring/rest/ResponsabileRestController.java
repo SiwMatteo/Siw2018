@@ -15,7 +15,7 @@ public class ResponsabileRestController {
 	
     @RequestMapping("/rest/responsabile/{id}")
     public Responsabile getResponsabile(@PathVariable String email) {
-        return responsabileService.findOne(email);
+        return responsabileService.findByEmail(email);
 
 }
 }
