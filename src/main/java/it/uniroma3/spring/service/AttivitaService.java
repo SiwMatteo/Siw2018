@@ -21,14 +21,14 @@ public class AttivitaService {
 	}
 
 	@Transactional
-	public void add(final Attivita attivita) {
+	public void save(final Attivita attivita) {
 		this.attivitaRepository.save(attivita);
 	}
 
 	public List<Attivita> findbyNome(String nome) {
 		return this.attivitaRepository.findByNome(nome);
 	}
-	public Attivita findbyId(Long id) {
+	public Attivita findById(Long id) {
 		return this.attivitaRepository.findOne(id);
 	}
 
@@ -43,5 +43,7 @@ public class AttivitaService {
 	public void delete(Attivita attivita) {
 		this.attivitaRepository.delete(attivita);
 	}
+
+
 
 }

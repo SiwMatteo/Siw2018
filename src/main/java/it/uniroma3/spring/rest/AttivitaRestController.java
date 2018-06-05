@@ -16,6 +16,6 @@ public class AttivitaRestController {
 
 	@RequestMapping("/rest/attivita/{id}")
 	public Attivita getAllievo(@PathVariable Long id) {
-		return attivitaService.findbyId(id);
+		return attivitaService.findById(id);
 	}
 }

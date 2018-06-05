@@ -18,7 +18,7 @@ public interface AttivitaRepository extends CrudRepository<Attivita, Long> {
 
 	List<Attivita> findByCentro(Centro centro);
 
-	Attivita findOne(Long id);
+	Attivita findById(Long id);
 
 	void deleteById(Long arg0);
 

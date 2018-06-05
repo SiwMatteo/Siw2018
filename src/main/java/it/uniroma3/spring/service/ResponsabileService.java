@@ -15,7 +15,7 @@ public class ResponsabileService {
 	private ResponsabileRepository responsabileRepository;
 
 	@Transactional
-	public void add(Responsabile responsabile) {
+	public void save(Responsabile responsabile) {
 		this.responsabileRepository.save(responsabile);
 	}
 

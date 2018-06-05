@@ -38,7 +38,7 @@ public class Responsabile {
 	@OneToOne
 	private Centro centro;
 	
-	private Azienda azienda;
+
 	
 	
 	
@@ -101,16 +101,7 @@ public class Responsabile {
 
 
 
-	public Azienda getAzienda() {
-		return azienda;
-	}
-
-
-
-	public void setAzienda(Azienda azienda) {
-		this.azienda = azienda;
-	}
-
+	
 	public Centro getCentro() {
 		return centro;
 	}

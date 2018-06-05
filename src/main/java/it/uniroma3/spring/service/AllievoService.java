@@ -17,7 +17,7 @@ public class AllievoService {
 	private AllievoRepository allievoRepository;
 
 
-	public void add(Allievo allievo) {
+	public void save(Allievo allievo) {
 		this.allievoRepository.save(allievo);
 	}
 

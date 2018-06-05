@@ -22,7 +22,7 @@ public class CentroService {
 		return this.centroRepository.findAll();
 	}
 
-	public void add(final Centro centro) {
+	public void save(final Centro centro) {
 		this.centroRepository.save(centro);
 	}
 
