@@ -5,18 +5,23 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.spring.model.Allievo;
+import it.uniroma3.spring.model.Azienda;
 
 public interface AllievoRepository extends CrudRepository<Allievo, String> {
 	
-	List<Allievo> findByNome(String nome);
+	public List<Allievo> findByNome(String nome);
 
-	List<Allievo> findByCognome(String cognome);
+	public List<Allievo> findByCognome(String cognome);
 
-	Allievo findByCodiceFiscale(String codiceFiscale);
+	public Allievo findByCodiceFiscale(String codiceFiscale);
 
-	void deleteByCodiceFiscale(String codiceFiscale);
+	public void deleteByCodiceFiscale(String codiceFiscale);
 	
-	void delete(Allievo allievo);
+	public void delete(Allievo allievo);
+	public List<Allievo> findByAzienda(Azienda azienda);
+	
+	public List<Allievo> findAll();
+	
 
 
 }

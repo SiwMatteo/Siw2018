@@ -6,13 +6,13 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.spring.model.Azienda;
 
-public interface AziendaRepository extends CrudRepository<Azienda, Long>{
+public interface AziendaRepository extends CrudRepository<Azienda, Integer>{
 
 	public Azienda findByNome(String nome);
 
 	public List<Azienda>findAll();
 
-	public Azienda findById(Long id);
+	public Azienda findById(int id);
 
 
 		

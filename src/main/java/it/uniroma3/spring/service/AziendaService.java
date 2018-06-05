@@ -25,7 +25,7 @@ public class AziendaService {
 		return this.aziendaRepository.findByNome(nome);
 	}
 
-	public Azienda findById(Long id) {
+	public Azienda findById(int id) {
 		return this.aziendaRepository.findById(id);
 	}
 	

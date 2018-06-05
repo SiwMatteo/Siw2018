@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>HomePage centro</title>
+<title>Insert title here</title>
 </head>
 <body>
-<div>Prova metedo inserisci allievo</div>
-<a href="addAllievo">insersci un nuovo allievo</a>
 
 </body>
 </html>

@@ -15,7 +15,7 @@ public class Azienda {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private int id;
 
 	@Column(nullable = false)
 	private String nome;
@@ -29,14 +29,14 @@ public class Azienda {
 	@OneToMany(mappedBy="azienda")
 	private List<Centro> centri;
 
-	@OneToOne 
-	private Responsabile responsabile;
+	@OneToMany(mappedBy="azienda")
+	private List<Allievo> allievi;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -72,16 +72,17 @@ public class Azienda {
 		this.centri = centri;
 	}
 
-	public Responsabile getResponsabile() {
-		return responsabile;
-	}
-
-	public void setResponsabile(Responsabile responsabile) {
-		this.responsabile = responsabile;
-	}
 	
 	public void AggiungiCentro(Centro centro) {
 	this.centri.add(centro)	;
+	}
+
+	public List<Allievo> getAllievi() {
+		return allievi;
+	}
+
+	public void setAllievi(List<Allievo> allievi) {
+		this.allievi = allievi;
 	}
 	
 	

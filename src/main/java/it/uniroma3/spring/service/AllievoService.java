@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.spring.model.Allievo;
+import it.uniroma3.spring.model.Azienda;
 import it.uniroma3.spring.repository.AllievoRepository;
 
 @Service
@@ -39,5 +40,23 @@ public class AllievoService {
 	
 	public void deleteAllievoByCF(String codiceFiscale) {
 		this.allievoRepository.deleteByCodiceFiscale(codiceFiscale);
+	}
+
+	public List<Allievo> findAll() {
+	
+		return this.allievoRepository.findAll();
+	}
+
+	public boolean alreadyExists(Allievo allievo) {
+	List<Allievo>allievi=this.findAll();
+	if(allievi.contains(allievo)) {
+	return true;
+	}return false;
+		
+	}
+
+	public List<Allievo> findByAzienda(Azienda azienda) {
+	
+		return this.allievoRepository.findByAzienda(azienda);
 	}
 }

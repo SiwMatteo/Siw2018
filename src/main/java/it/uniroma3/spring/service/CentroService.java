@@ -42,7 +42,14 @@ public class CentroService {
 		this.centroRepository.deleteById(id);
 	}
 	
-	public Centro findById(Long id) {
+	public Centro findById(int id) {
 		return this.centroRepository.findById(id);
 	}
+
+	public Centro findByEmail(String email) {
+		
+		return centroRepository.findByEmail(email);
+	}
+
+
 }

@@ -38,15 +38,14 @@ public class Responsabile {
 	@OneToOne
 	private Centro centro;
 	
-
+	@OneToOne
+	private Azienda azienda;
 	
 	
 	
 	public String getEmail() {
 		return email;
 	}
-
-
 
 	public void setEmail(String email) {
 
@@ -100,14 +99,24 @@ public class Responsabile {
 	}
 
 
-
-	
 	public Centro getCentro() {
 		return centro;
 	}
 
 	public void setCentro(Centro centro) {
 		this.centro = centro;
+	}
+
+
+
+	public Azienda getAzienda() {
+		return azienda;
+	}
+
+
+
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
 	}
 
 	

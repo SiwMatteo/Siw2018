@@ -9,7 +9,7 @@ public interface ResponsabileRepository extends CrudRepository<Responsabile, Str
 
 	
 	
-	Responsabile findByEmail(String email);
+	public Responsabile findByEmail(String email);
 
 	
 	

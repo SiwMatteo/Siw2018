@@ -1,5 +1,6 @@
 package it.uniroma3.spring.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class MainController {
 
 	@RequestMapping("/processlogin")
 	public String ProcessLogin(@Valid @ModelAttribute("responsabile") Responsabile responsabile,
-			BindingResult theBidingResult, Model model) {
+			BindingResult theBidingResult, Model model, HttpSession session) {
 	
 		if (theBidingResult.hasErrors()) {
 			return "login";
@@ -48,9 +49,11 @@ public class MainController {
 		System.out.println(c.getPassword());
 				if (responsabile.getPassword().equals(c.getPassword())) {
 					if (c.getRuolo().equals("direttore")) {
+						session.setAttribute("responsabileAzienda",responsabile);
 						return "pagina-iniziale-azienda";
 
 					} else
+						session.setAttribute("responsabileCentro",responsabile);
 						return "pagina-iniziale-centro";
 				} else
 					model.addAttribute("errPassw", "la password inserita risulta sbagliata");
