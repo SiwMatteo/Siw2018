@@ -19,7 +19,7 @@
 		<div id="header" class="container">
 			<div id="logo">
 				<h1>
-					<a href="#">MF Activity Corporation</a>
+					<a href="/">MF Activity Corporation</a>
 				</h1>
 				<div id="menu">
 					<ul>

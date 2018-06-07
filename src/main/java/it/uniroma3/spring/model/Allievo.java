@@ -5,8 +5,11 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Allievo {
@@ -21,13 +24,17 @@ public class Allievo {
 	private String cognome;
 
 	@Temporal(TemporalType.DATE)
-	private Date dataNascita;
+	@DateTimeFormat(pattern = "dd-mm-yyyy")
+	private Date dataDiNascita;
 
 	@Column(nullable = false)
-	private String luogoNascita;
+	private String luogoDiNascita;
 
 	@Column(nullable = false)
-	private int telefono;
+	private String telefono;
+
+	@ManyToOne
+	private Azienda azienda;
 
 	public String getCodiceFiscale() {
 		return codiceFiscale;
@@ -53,80 +60,36 @@ public class Allievo {
 		this.cognome = cognome;
 	}
 
-	public Date getDataNascita() {
-		return dataNascita;
+	public Date getDataDiNascita() {
+		return dataDiNascita;
 	}
 
-	public void setDataNascita(Date dataNascita) {
-		this.dataNascita = dataNascita;
+	public void setDataDiNascita(Date dataNascita) {
+		this.dataDiNascita = dataNascita;
 	}
 
-	public String getLuogoNascita() {
-		return luogoNascita;
+	public String getLuogoDiNascita() {
+		return luogoDiNascita;
 	}
 
-	public void setLuogoNascita(String luogoNascita) {
-		this.luogoNascita = luogoNascita;
+	public void setLuogoDiNascita(String luogoNascita) {
+		this.luogoDiNascita = luogoNascita;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((codiceFiscale == null) ? 0 : codiceFiscale.hashCode());
-		result = prime * result + ((cognome == null) ? 0 : cognome.hashCode());
-		result = prime * result + ((dataNascita == null) ? 0 : dataNascita.hashCode());
-		result = prime * result + ((luogoNascita == null) ? 0 : luogoNascita.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + telefono;
-		return result;
+	public Azienda getAzienda() {
+		return azienda;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Allievo other = (Allievo) obj;
-		if (codiceFiscale == null) {
-			if (other.codiceFiscale != null)
-				return false;
-		} else if (!codiceFiscale.equals(other.codiceFiscale))
-			return false;
-		if (cognome == null) {
-			if (other.cognome != null)
-				return false;
-		} else if (!cognome.equals(other.cognome))
-			return false;
-		if (dataNascita == null) {
-			if (other.dataNascita != null)
-				return false;
-		} else if (!dataNascita.equals(other.dataNascita))
-			return false;
-		if (luogoNascita == null) {
-			if (other.luogoNascita != null)
-				return false;
-		} else if (!luogoNascita.equals(other.luogoNascita))
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (telefono != other.telefono)
-			return false;
-		return true;
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
 	}
 
 }

@@ -10,26 +10,45 @@ import org.springframework.transaction.annotation.Transactional;
 import it.uniroma3.spring.model.Centro;
 import it.uniroma3.spring.repository.CentroRepository;
 
-
 @Service
+@Transactional
 public class CentroService {
 
 	@Autowired
 	CentroRepository centroRepository;
 
-	public Iterable<Centro> findAll() {
+	public List<Centro> findAll() {
 
 		return this.centroRepository.findAll();
 	}
 
-	@Transactional
-	public void add(final Centro centro) {
+	public void save(final Centro centro) {
 		this.centroRepository.save(centro);
 	}
 
-	public Centro findOne(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Centro> centriByNome(String nome) {
+		return (List<Centro>) this.centroRepository.findByNome(nome);
+	}
+
+	public void deleteCentroByNome(String nome) {
+		this.centroRepository.deleteByNome(nome);
+	}
+
+	public void deleteCentro(Centro centro) {
+		this.centroRepository.delete(centro);
+	}
+
+	public void deleteCentroById(Long id) {
+		this.centroRepository.deleteById(id);
+	}
+	
+	public Centro findById(int id) {
+		return this.centroRepository.findById(id);
+	}
+
+	public Centro findByEmail(String email) {
+		
+		return centroRepository.findByEmail(email);
 	}
 
 

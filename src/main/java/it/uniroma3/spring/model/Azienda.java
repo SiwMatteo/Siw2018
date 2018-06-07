@@ -12,9 +12,10 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Azienda {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 
 	@Column(nullable = false)
 	private String nome;
@@ -28,15 +29,14 @@ public class Azienda {
 	@OneToMany(mappedBy="azienda")
 	private List<Centro> centri;
 
-	
-	@OneToOne
-	private Responsabile responsabile;
+	@OneToMany(mappedBy="azienda")
+	private List<Allievo> allievi;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -72,12 +72,19 @@ public class Azienda {
 		this.centri = centri;
 	}
 
-	public Responsabile getResponsabile() {
-		return responsabile;
+	
+	public void AggiungiCentro(Centro centro) {
+	this.centri.add(centro)	;
 	}
 
-	public void setResponsabile(Responsabile responsabile) {
-		this.responsabile = responsabile;
+	public List<Allievo> getAllievi() {
+		return allievi;
 	}
 
-}
+	public void setAllievi(List<Allievo> allievi) {
+		this.allievi = allievi;
+	}
+	
+	
+	}
+

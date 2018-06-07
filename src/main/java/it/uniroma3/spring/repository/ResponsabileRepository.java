@@ -7,9 +7,9 @@ import it.uniroma3.spring.model.Responsabile;
 
 public interface ResponsabileRepository extends CrudRepository<Responsabile, String>{
 
-	void save(Allievo allievo);
 	
-	Responsabile findByEmail(String email);
+	
+	public Responsabile findByEmail(String email);
 
 	
 	

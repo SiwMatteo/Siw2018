@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MF Activity Corp</title>
+<title>Login Responsabile</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -20,7 +20,7 @@
 		<div id="header" class="container">
 			<div id="logo">
 				<h1>
-					<a href="#">MF Activity Corporation</a>
+					<a href="/">MF Activity Corporation</a>
 				</h1>
 				<div id="menu">
 					<ul>
@@ -44,10 +44,21 @@ Password: <form:input path="password" />
 			<br>
 			<br>
 			<input type="submit" value="invia">
-	</div>
-
-
-
 	</form:form>
+	<br>
+	<br>
+	</div>
+	<div id="copyright" class="container">
+		<p>
+			&copy; Untitled. All rights reserved. | Photos by <a
+				href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+				href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+		</p>
+		<ul class="contact">
+			<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+			<li><a href="#" class="icon icon-instagram"><span>Instagram</span></a></li>
+		</ul>
+	</div>
 </body>
 </html>

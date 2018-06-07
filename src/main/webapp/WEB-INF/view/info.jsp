@@ -19,7 +19,7 @@
 		<div id="header" class="container">
 			<div id="logo">
 				<h1>
-					<a href="#">MF Activity Corporation</a>
+					<a href="/">MF Activity Corporation</a>
 				</h1>
 				<div id="menu">
 					<ul>
@@ -34,8 +34,10 @@
 	</div>
 	<div id="page-wrapper">
 		<div id="welcome" class="container">
-			<p>Sito realizzato da Francesco Forgione e Matteo De Santis detto il Pelato, per il progetto del corso di
+			<p>Sito realizzato da Francesco Forgione e Matteo De Santis, per il progetto del corso di
 			Sistemi Informativi su Web, dell'anno accademico 2017/2018</p>
+			<br>
+			<br>
 		</div>
 	</div>
 	<div id="copyright" class="container">

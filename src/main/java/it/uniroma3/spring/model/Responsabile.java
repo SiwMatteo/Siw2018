@@ -3,7 +3,7 @@ package it.uniroma3.spring.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -14,12 +14,12 @@ public class Responsabile {
 
 	@Id
 	@Column(nullable = false)
-	@NotNull(message = "e richiesto")
-	@Size(min = 1, message = "e richiesto")
+	@NotNull(message = "e' richiesto")
+	@Size(min = 1, message = "e' richiesto")
 	private String email;
 
-	@NotNull(message = "e richiesto")
-	@Size(min = 1, message = "erichiesto")
+	@NotNull(message = "e' richiesto")
+	@Size(min = 1, message = "e' richiesto")
 	@Column(nullable = false)
 	private String password;
 
@@ -34,16 +34,18 @@ public class Responsabile {
 
 	@Column(nullable = false)
 	private String ruolo;
-//	@ManyToOne
-	//private Centro centro;
+	
+	@OneToOne
+	private Centro centro;
+	
+	@OneToOne
+	private Azienda azienda;
 	
 	
 	
 	public String getEmail() {
 		return email;
 	}
-
-
 
 	public void setEmail(String email) {
 
@@ -96,12 +98,26 @@ public class Responsabile {
 		this.ruolo = ruolo;
 	}
 
-	/*public Centro getCentro() {
+
+	public Centro getCentro() {
 		return centro;
 	}
 
 	public void setCentro(Centro centro) {
 		this.centro = centro;
 	}
-*/
+
+
+
+	public Azienda getAzienda() {
+		return azienda;
+	}
+
+
+
+	public void setAzienda(Azienda azienda) {
+		this.azienda = azienda;
+	}
+
+	
 }
