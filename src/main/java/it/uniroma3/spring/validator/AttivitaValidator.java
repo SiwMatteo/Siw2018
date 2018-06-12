@@ -12,9 +12,9 @@ public class AttivitaValidator implements Validator {
 
 	@Override
 	public void validate(Object o, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "data", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required.attivita.nome");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required.attivita.descrizione");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "data", "required.attivita.data");
 	}
 
 	@Override

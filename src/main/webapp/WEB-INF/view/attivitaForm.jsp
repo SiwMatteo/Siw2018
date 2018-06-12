@@ -35,13 +35,16 @@
 	</div>
 	<div id="page-wrapper">
 			<form:form action="attivita" modelAttribute="attivita1">
-			Nome: <form:input path="nome" /> 
+			Nome: <form:input path="nome" />
+			<form:errors path="nome"/>
 			<br>
 			<br>
 			Descrizione: <form:input path="descrizione" />
+			<form:errors path="descrizione"/>
 			<br>
 			<br>
-			Data : <form:input path="data" type="text" /> 
+			Data : <form:input path="data" type="text" />
+			<form:errors path="data"/> 
 			<br>
 			<br>
 			 <input type="submit" name="invia">

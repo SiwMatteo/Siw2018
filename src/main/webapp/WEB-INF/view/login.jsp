@@ -39,8 +39,7 @@ Email: <form:input path="email" />
 			<div>${errMail}</div>
 			<br>
 			<br>
-Password: <form:input path="password" />
-			<div>${errPasswss}</div>
+Password: <form:input path="password" type="password" />
 			<br>
 			<br>
 			<input type="submit" value="invia">

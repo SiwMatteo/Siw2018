@@ -36,21 +36,27 @@
 	<div id="page-wrapper">
 		<form:form action="allievo" modelAttribute="allievo1">
 			Codice Fiscale: <form:input path="codiceFiscale" />
+			<form:errors path="codiceFiscale"/>
 			<br>
 			<br> 
-			Nome: <form:input path="nome" /> 
+			Nome: <form:input path="nome" />
+			<form:errors path="nome" />
 			<br>
 			<br>
 			Cognome: <form:input path="cognome" />
+			<form:errors path="cognome" />
 			<br>
 			<br>
-			Data di nascita: <form:input path="dataDiNascita" type="text" /> 
+			Data di nascita: <form:input path="dataDiNascita" type="text" />
+			<form:errors path="dataDiNascita" />
 			<br>
 			<br>
 			Luogo di nascita: <form:input path="luogoDiNascita" />
+			<form:errors path="luogoDiNascita" />
 			<br>
 			<br>
 			Telefono: <form:input path="telefono" />
+			<form:errors path="telefono" />
 			<br>
 			<br>
 			 <input type="submit" name="invia">
