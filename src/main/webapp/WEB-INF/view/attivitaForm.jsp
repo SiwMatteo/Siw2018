@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Inserisci Attività</title>
+<title>Inserisci Attivitï¿½</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -43,7 +43,7 @@
 			<form:errors path="descrizione"/>
 			<br>
 			<br>
-			Data : <form:input path="data" type="text" />
+			Data : <form:input path="data" type="date" />
 			<form:errors path="data"/> 
 			<br>
 			<br>

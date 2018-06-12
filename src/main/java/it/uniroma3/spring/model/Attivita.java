@@ -29,7 +29,7 @@ public class Attivita{
 	private String descrizione;
 	
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd-mm-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date data;
 	
 	@ManyToOne

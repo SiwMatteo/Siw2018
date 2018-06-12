@@ -33,6 +33,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div id="page-wrapper">
 		<form:form action="allievo" modelAttribute="allievo1">
 			Codice Fiscale: <form:input path="codiceFiscale" />
@@ -47,7 +48,7 @@
 			<form:errors path="cognome" />
 			<br>
 			<br>
-			Data di nascita: <form:input path="dataDiNascita" type="text" />
+			Data di nascita: <form:input path="dataDiNascita" type="date" />
 			<form:errors path="dataDiNascita" />
 			<br>
 			<br>

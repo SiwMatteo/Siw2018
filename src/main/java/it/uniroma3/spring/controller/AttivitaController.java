@@ -55,7 +55,7 @@ public class AttivitaController {
 	}
 
 	@RequestMapping(value = "/attivita", method = RequestMethod.POST)
-	public String newAttivita(@Valid @ModelAttribute("attivita1") Attivita attivita, HttpSession session,
+	public String controllaAttivita(@Valid @ModelAttribute("attivita1") Attivita attivita, HttpSession session,
 			BindingResult bindingResult, Model model) {
 
 		this.attivitaValidator.validate(attivita, bindingResult);
@@ -65,13 +65,18 @@ public class AttivitaController {
 			return "attivitaForm";
 		} else {
 			if (!bindingResult.hasErrors()) {
-
-				this.attivitaService.save(attivita);
-				model.addAttribute("attivita", this.attivitaService.findAll());
-				return "attivitaList";
+				session.setAttribute("attivita", attivita);
+				return "verifica-attivita";
 			}
 		}
 		return "attivitaForm";
 	} 
 
+
+	@RequestMapping(value = "/newAttivita", method = RequestMethod.GET)
+	public String newAttivita( HttpSession session, Model model) {
+		Attivita att=(Attivita) session.getAttribute("attivita");
+		this.attivitaService.save(att);
+		return "pagina-iniziale-centro";
+}
 }

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -15,6 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Allievo {
 
 	@Id
+	@Column (unique = true, nullable = false)
 	private String codiceFiscale;
 
 	@Column(nullable = false)
@@ -24,7 +27,7 @@ public class Allievo {
 	private String cognome;
 
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd-mm-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataDiNascita;
 
 	@Column(nullable = false)

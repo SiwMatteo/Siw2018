@@ -55,23 +55,36 @@ public class AllievoController {
 	}
 
 	@RequestMapping(value = "/allievo", method = RequestMethod.POST)
-	public String newAllievo(@Valid @ModelAttribute("allievo1") Allievo allievo, HttpSession session,
+	public String verificaAllievo(@Valid @ModelAttribute("allievo1") Allievo allievo, HttpSession session,
 			BindingResult bindingResult, Model model) {
 
 		this.allievoValidator.validate(allievo, bindingResult);
 		System.out.println(allievo.getNome());
+		
 		if (this.allievoService.alreadyExists(allievo)) {
 			model.addAttribute("exists", "Allievo already exists");
 			return "allievoForm";
+			
 		} else {
 			if (!bindingResult.hasErrors()) {
-
-				this.allievoService.save(allievo);
-				model.addAttribute("allievi", this.allievoService.findAll());
-				return "allieviList";
+				
+				session.setAttribute("allievo", allievo);
+				
+				return "verifica-allievo";
 			}
 		}
 		return "allievoForm";
+		
+	}
+	@RequestMapping(value = "/newAllievo", method = RequestMethod.GET)
+	public String newAllievo( HttpSession session,Model model) {
+
+		Allievo all=(Allievo) session.getAttribute("allievo");
+		
+		allievoService.save(all);
+	
+		return "pagina-iniziale-centro";
+	}
 	}
 
-}
+
