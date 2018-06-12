@@ -25,5 +25,8 @@ public interface AttivitaRepository extends CrudRepository<Attivita, Long> {
 	void deleteAll();
 
 	void delete(Attivita attivita);
+	
+	public List<Attivita> findAll();
+
 
 }

@@ -17,7 +17,6 @@ public class AllievoService {
 	@Autowired
 	private AllievoRepository allievoRepository;
 
-
 	public void save(Allievo allievo) {
 		this.allievoRepository.save(allievo);
 	}
@@ -37,26 +36,25 @@ public class AllievoService {
 	public void deleteAllievo(Allievo allievo) {
 		this.allievoRepository.delete(allievo);
 	}
-	
+
 	public void deleteAllievoByCF(String codiceFiscale) {
 		this.allievoRepository.deleteByCodiceFiscale(codiceFiscale);
 	}
 
 	public List<Allievo> findAll() {
-	
 		return this.allievoRepository.findAll();
 	}
 
 	public boolean alreadyExists(Allievo allievo) {
-	List<Allievo>allievi=this.findAll();
-	if(allievi.contains(allievo)) {
-	return true;
-	}return false;
-		
+		List<Allievo> allievi = this.findAll();
+		if (allievi.contains(allievo)) {
+			return true;
+		}
+		return false;
 	}
 
 	public List<Allievo> findByAzienda(Azienda azienda) {
-	
+
 		return this.allievoRepository.findByAzienda(azienda);
 	}
 }

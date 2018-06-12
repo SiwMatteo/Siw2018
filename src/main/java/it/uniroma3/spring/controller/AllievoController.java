@@ -27,8 +27,7 @@ public class AllievoController {
 	@Autowired
 	AllievoService allievoService;
 	@Autowired
-	AllievoValidator validator;
-
+	AllievoValidator allievoValidator;
 	@Autowired
 	AziendaService aziendaService;
 
@@ -41,13 +40,11 @@ public class AllievoController {
 
 	@RequestMapping("/addAllievo")
 	public String addAllievo(Model model, HttpSession session) {
-		
 
-;
-		Azienda azienda=aziendaService.findById(1);
-		Allievo allievo=new Allievo();
-		
-		model.addAttribute("allievo1",  allievo);
+		Azienda azienda = aziendaService.findById(1);
+		Allievo allievo = new Allievo();
+
+		model.addAttribute("allievo1", allievo);
 		return "allievoForm";
 	}
 
@@ -57,11 +54,11 @@ public class AllievoController {
 		return "allievo";
 	}
 
-	@RequestMapping(value="/allievo",method=RequestMethod.POST )
-	public String newAllievo(@Valid@ModelAttribute("allievo1")Allievo allievo,HttpSession session,BindingResult bindingResult , Model model
-			) {
-		
-		this.validator.validate(allievo, bindingResult);
+	@RequestMapping(value = "/allievo", method = RequestMethod.POST)
+	public String newAllievo(@Valid @ModelAttribute("allievo1") Allievo allievo, HttpSession session,
+			BindingResult bindingResult, Model model) {
+
+		this.allievoValidator.validate(allievo, bindingResult);
 		System.out.println(allievo.getNome());
 		if (this.allievoService.alreadyExists(allievo)) {
 			model.addAttribute("exists", "Allievo already exists");

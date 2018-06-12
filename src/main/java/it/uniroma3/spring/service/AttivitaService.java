@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.uniroma3.spring.model.Allievo;
 import it.uniroma3.spring.model.Attivita;
 import it.uniroma3.spring.repository.AttivitaRepository;
 
@@ -15,8 +16,7 @@ public class AttivitaService {
 	@Autowired
 	private AttivitaRepository attivitaRepository;
 
-	public Iterable<Attivita> findAll() {
-
+	public List<Attivita> findAll() {
 		return this.attivitaRepository.findAll();
 	}
 
@@ -42,6 +42,14 @@ public class AttivitaService {
 	
 	public void delete(Attivita attivita) {
 		this.attivitaRepository.delete(attivita);
+	}
+
+	public boolean alreadyExists(Attivita attivita) {
+		List<Attivita> listaattivita = this.findAll();
+		if (listaattivita.contains(attivita)) {
+			return true;
+		}
+		return false;
 	}
 
 

@@ -12,10 +12,10 @@ import it.uniroma3.spring.service.ResponsabileService;
 public class ResponsabileController {
 	@Autowired
 	ResponsabileService responsabileService;
-	
-    @RequestMapping("/rest/responsabile/{id}")
-    public Responsabile getResponsabile(@PathVariable String email) {
-        return responsabileService.findByEmail(email);
 
-}
+	@RequestMapping("/rest/responsabile/{id}")
+	public Responsabile getResponsabile(@PathVariable String email) {
+		return responsabileService.findByEmail(email);
+
+	}
 }

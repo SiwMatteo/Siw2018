@@ -13,12 +13,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Attivita{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(nullable=false)
 	private String nome;
@@ -27,6 +29,7 @@ public class Attivita{
 	private String descrizione;
 	
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd-mm-yyyy")
 	private Date data;
 	
 	@ManyToOne
@@ -36,11 +39,11 @@ public class Attivita{
 	@OneToMany
 	private List<Allievo> allievi;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
