@@ -1,12 +1,13 @@
 package it.uniroma3.spring.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,7 +39,10 @@ public class Allievo {
 
 	@ManyToOne
 	private Azienda azienda;
-
+	
+	@ManyToMany(mappedBy="allievi",fetch=FetchType.EAGER)
+	private List<Attivita> attivita;
+	
 	public String getCodiceFiscale() {
 		return codiceFiscale;
 	}
@@ -93,6 +97,14 @@ public class Allievo {
 
 	public void setAzienda(Azienda azienda) {
 		this.azienda = azienda;
+	}
+
+	public List<Attivita> getAttivita() {
+		return attivita;
+	}
+
+	public void setAttivita(List<Attivita> attivita) {
+		this.attivita = attivita;
 	}
 
 }

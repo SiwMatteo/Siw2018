@@ -41,11 +41,11 @@ public class DemoApplication extends SpringBootServletInitializer {
 
 		
 Responsabile resp=new Responsabile();
-resp.setEmail("direttore@prova.it");
+resp.setEmail("prova@prova.it");
 resp.setNome("Matteo");
-resp.setCognome("rossi");
-resp.setRuolo("direttore");
-resp.setPassword("prova1");
+resp.setCognome("forgione");
+resp.setRuolo("manager");
+resp.setPassword("prova");
 
 responsabileService.save(resp);
 

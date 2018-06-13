@@ -45,6 +45,7 @@
 			<br>
 			<br>
 			<br>
+			<a href="/addAllievoAttivita">Inserisci un allievo in una attivita</a>
 		</div>
 	</div>
 	<div id="copyright" class="container">

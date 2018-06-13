@@ -1,5 +1,8 @@
 package it.uniroma3.spring.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.spring.model.Allievo;
 import it.uniroma3.spring.model.Attivita;
 import it.uniroma3.spring.model.Azienda;
+import it.uniroma3.spring.service.AllievoService;
 import it.uniroma3.spring.service.AttivitaService;
 import it.uniroma3.spring.service.AziendaService;
 import it.uniroma3.spring.service.CentroService;
@@ -30,9 +35,11 @@ public class AttivitaController {
 	AttivitaValidator attivitaValidator;
 	@Autowired
 	AziendaService aziendaService;
+	@Autowired
+	AllievoService allievoService;
 
 	@RequestMapping("/attivita")
-	public String allievi(Model model, HttpSession session) {
+	public String attivita(Model model, HttpSession session) {
 		model.addAttribute("attivita", this.attivitaService.findAll());
 		return "attivitaList";
 
@@ -48,10 +55,12 @@ public class AttivitaController {
 		return "attivitaForm";
 	}
 
-	@RequestMapping(value = "/rest/attivita/{id}", method = RequestMethod.GET)
-	public String getAttivita(@PathVariable Long id, Model model, HttpSession session) {
-		model.addAttribute("attivita1", attivitaService.findById(id));
-		return "attivita";
+	@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
+	public String getAttivita(@PathVariable("id") Long id, Model model, HttpSession session) {
+		Attivita att=attivitaService.findById(id);
+		session.setAttribute("attivitaB", att);
+		model.addAttribute("allievi", allievoService.findAll());
+		return "allievo-attivita";
 	}
 
 	@RequestMapping(value = "/attivita", method = RequestMethod.POST)
@@ -70,13 +79,37 @@ public class AttivitaController {
 			}
 		}
 		return "attivitaForm";
-	} 
-
+	}
 
 	@RequestMapping(value = "/newAttivita", method = RequestMethod.GET)
-	public String newAttivita( HttpSession session, Model model) {
-		Attivita att=(Attivita) session.getAttribute("attivita");
+	public String newAttivita(HttpSession session, Model model) {
+		Attivita att = (Attivita) session.getAttribute("attivita");
 		this.attivitaService.save(att);
 		return "pagina-iniziale-centro";
+	}
+
+	@RequestMapping("/addAllievoAttivita")
+	public String allieviAttivita(Model model, HttpSession session) {
+		session.setAttribute("attivita1", this.attivitaService.findAll());
+
+		return "iscrizioneAdAttivita";
+
+	}
+
+	@RequestMapping(value = "/attivita/attivitaAllievo/{codiceFiscale}", method = RequestMethod.GET)
+	public String getAttivitaAllievo(@PathVariable("codiceFiscale") String codiceFiscale, Model model,
+			HttpSession session) {
+		Attivita att = (Attivita) session.getAttribute("attivitaB");
+		List<Allievo>allievi=att.getAllievi();
+		if(allievi==null) {
+			allievi=new ArrayList();
+			allievi.add(allievoService.findbyCodiceFiscale(codiceFiscale));
+			att.setAllievi(allievi);
+			attivitaService.save(att);
+		}
+	att.getAllievi().add((Allievo)allievoService.findbyCodiceFiscale(codiceFiscale));
+	attivitaService.save(att);
+	
+	return "conferma-iscrizione";
 }
 }
