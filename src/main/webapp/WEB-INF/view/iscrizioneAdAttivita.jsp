@@ -11,8 +11,13 @@
 <body>
 <c:forEach items="${attivita1}" var="attivita">
 <ul>
+<table>
 
-<li> <a href="attivita/${attivita.id}">${attivita.nome} </a> </li>
+<tr><td>${attivita.nome}</td><td>${attivita.descrizione}</td><td><button name="nome" onclick="location.href='attivita/${attivita.id}'">selezione</button></td></tr>
+
+
+</table>
+
 
 
 </ul>

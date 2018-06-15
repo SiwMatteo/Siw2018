@@ -27,13 +27,13 @@ public class MainController {
 
 	// Login form
 	@RequestMapping("/")
-	public String Page() {
+	public String Page(HttpSession session) {
 		return "index";
 	}
 
 	// Login form with error
 	@RequestMapping("/login")
-	public String Login(Model model) {
+	public String Login(Model model,HttpSession session) {
 		Responsabile r = new Responsabile();
 		model.addAttribute("responsabile", r);
 		return "login";

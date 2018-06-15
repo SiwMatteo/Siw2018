@@ -106,5 +106,13 @@ public class Allievo {
 	public void setAttivita(List<Attivita> attivita) {
 		this.attivita = attivita;
 	}
-
+@Override
+public boolean equals(Object o) {
+	Allievo allievo=(Allievo)o;
+	return this.getCodiceFiscale().equals(allievo.getCodiceFiscale());
+}
+@Override
+public int hashCode() {
+	return this.getCodiceFiscale().hashCode();
+}
 }

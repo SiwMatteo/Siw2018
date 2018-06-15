@@ -1,6 +1,7 @@
 package it.uniroma3.spring.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -57,9 +58,11 @@ public class AttivitaController {
 
 	@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
 	public String getAttivita(@PathVariable("id") Long id, Model model, HttpSession session) {
-		Attivita att=attivitaService.findById(id);
+		
+		Attivita att = attivitaService.findById(id);
 		session.setAttribute("attivitaB", att);
-		model.addAttribute("allievi", allievoService.findAll());
+		List<Allievo> allievi = AllieviNotAttivita(att);
+		model.addAttribute("allievi", allievi);
 		return "allievo-attivita";
 	}
 
@@ -68,7 +71,7 @@ public class AttivitaController {
 			BindingResult bindingResult, Model model) {
 
 		this.attivitaValidator.validate(attivita, bindingResult);
-		System.out.println(attivita.getNome());
+
 		if (this.attivitaService.alreadyExists(attivita)) {
 			model.addAttribute("exists", "Attivita already exists");
 			return "attivitaForm";
@@ -100,16 +103,37 @@ public class AttivitaController {
 	public String getAttivitaAllievo(@PathVariable("codiceFiscale") String codiceFiscale, Model model,
 			HttpSession session) {
 		Attivita att = (Attivita) session.getAttribute("attivitaB");
-		List<Allievo>allievi=att.getAllievi();
-		if(allievi==null) {
-			allievi=new ArrayList();
+		List<Allievo> allievi = att.getAllievi();
+		if (allievi == null) {
+			allievi = new ArrayList();
 			allievi.add(allievoService.findbyCodiceFiscale(codiceFiscale));
 			att.setAllievi(allievi);
 			attivitaService.save(att);
 		}
-	att.getAllievi().add((Allievo)allievoService.findbyCodiceFiscale(codiceFiscale));
-	attivitaService.save(att);
+		att.getAllievi().add((Allievo) allievoService.findbyCodiceFiscale(codiceFiscale));
+		attivitaService.save(att);
+
+		return "conferma-iscrizione";
+	}
+
+	public List<Allievo> AllieviNotAttivita(Attivita attivita) {
+		List<Allievo> all = allievoService.findAll();
+		List<Allievo> all1 = allievoService.findAllByAttivita(attivita);
+		List<Allievo> allievi = new ArrayList();
+		for(Allievo allievo:all) {
+			if(!all1.contains(allievo)) {
+				allievi.add(allievo);
+			}
+		}
+		
+		return allievi;
 	
-	return "conferma-iscrizione";
-}
-}
+			
+				}
+				
+				
+
+			
+		
+		
+	}
