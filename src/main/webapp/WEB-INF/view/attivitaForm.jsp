@@ -1,17 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Inserisci Attivitï¿½</title>
+<title>Inserisci Attività</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link
-	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
-	rel="stylesheet" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
@@ -35,22 +31,24 @@
 	</div>
 	<div id="page-wrapper">
 			<form:form action="attivita" modelAttribute="attivita1">
-			Nome: <form:input path="nome" />
-			<form:errors path="nome"/>
-			<br>
-			<br>
-			Descrizione: <form:input path="descrizione" />
-			<form:errors path="descrizione"/>
-			<br>
-			<br>
-			Data : <form:input path="data" type="date" />
-			<form:errors path="data"/> 
-			<br>
-			<br>
-			 <input type="submit" name="invia">
-			<br>
-			<br>
-		</form:form>  
+				Nome: <form:input path="nome" />
+				<form:errors path="nome"/>
+				<br>
+				<br>
+				Descrizione: <form:input path="descrizione" />
+				<form:errors path="descrizione"/>
+				<br>
+				<br>
+				Data : <form:input path="data" type="date" />
+				<form:errors path="data"/> 
+				<br>
+				<br>
+				<br>
+				 <input type="submit" name="invia">
+				<br>
+				<br>
+				<br>
+			</form:form>  
 		</div>
 		<div id="copyright" class="container">
 		<p>

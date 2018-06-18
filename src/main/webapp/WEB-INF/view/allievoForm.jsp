@@ -60,7 +60,9 @@
 			<form:errors path="telefono" />
 			<br>
 			<br>
+			<br>
 			 <input type="submit" name="invia">
+			<br>
 			<br>
 			<br>
 		</form:form>

@@ -42,8 +42,10 @@ Email: <form:input path="email" />
 Password: <form:input path="password" type="password" />
 			<br>
 			<br>
+			<br>
 			<input type="submit" value="invia">
 	</form:form>
+	<br>
 	<br>
 	<br>
 	</div>

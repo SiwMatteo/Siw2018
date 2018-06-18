@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MF Info</title>
+<title>Pagina Centro</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -34,19 +34,23 @@
 			</div>
 		</div>
 	</div>
-	<div id="page-wrapper">
-		<div id="welcome" class="container">
-			<p>${centro.nome}</p>
-			<a href="addAllievo">Inserisci un nuovo Allievo</a> 
-			<br>
-			<br>
-			<br>
-			<a href="/addAttivita">Inserisci una nuova Attività</a>
-			<br>
-			<br>
-			<br>
-			<a href="/addAllievoAttivita">Inserisci un allievo in una attivita</a>
-		</div>
+	<div id="welcome" class="container">
+		<p>Login effettuato nel centro ${centro.nome} , dal responsabile ${responsabile.nome} </p>
+		<br>
+		<br>
+		<a href="addAllievo">Inserisci un nuovo Allievo</a> 
+		<br>
+		<br>
+		<br>
+		<a href="/addAttivita">Inserisci una nuova Attività</a>
+		<br>
+		<br>
+		<br>
+		<a href="/addAllievoAttivita">Registra un allievo ad un'attività</a>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
 	<div id="copyright" class="container">
 		<p>

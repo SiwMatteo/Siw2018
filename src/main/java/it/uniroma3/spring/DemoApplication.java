@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import it.uniroma3.spring.model.Centro;
 import it.uniroma3.spring.model.Responsabile;
 import it.uniroma3.spring.service.AllievoService;
 import it.uniroma3.spring.service.AziendaService;
@@ -37,18 +38,28 @@ public class DemoApplication extends SpringBootServletInitializer {
 
 	@PostConstruct
 	public void inserisci() {
-	
-
 		
-Responsabile resp=new Responsabile();
-resp.setEmail("prova@prova.it");
-resp.setNome("Matteo");
-resp.setCognome("forgione");
-resp.setRuolo("manager");
-resp.setPassword("prova");
+		Centro centroA = new Centro();
+		centroA.setNome("A");
 
-responsabileService.save(resp);
+		Responsabile resp = new Responsabile();
+		resp.setEmail("direttore@prova.it");
+		resp.setNome("Matteo");
+		resp.setCognome("rossi");
+		resp.setRuolo("direttore");
+		resp.setPassword("prova1");
+		
+		Responsabile rocco = new Responsabile();
+		rocco.setEmail("rocco.b@prova.it");
+		rocco.setNome("Rocco");
+		rocco.setCognome("Bruni");
+		rocco.setRuolo("manager");
+		rocco.setPassword("rocco");
 
+		responsabileService.save(resp);
+		responsabileService.save(rocco);
+		
+		
 
 	}
 
