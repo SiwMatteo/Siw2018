@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Verifica Attività</title>
+<title>Verifica Centro</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -24,36 +24,26 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
-								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
+						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage Azienda</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
+								Direttore</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="page-wrapper">
-		Codice Fiscale: ${allievo.codiceFiscale}
+		Nome: ${centro.nome}
 		<br>
 		<br>
-		Nome: ${allievo.nome}
+		Indirizzo: ${centro.indirizzo}
 		<br>
 		<br>
-		Cognome: ${allievo.cognome}
+		Email: ${centro.email}
 		<br>
 		<br>
-		Data di nascita: ${allievo.dataDiNascita}
-		<br>
-		<br>
-		Luogo di nascita: ${allievo.luogoDiNascita}
-		<br>
-		<br>
-		Telefono: ${allievo.telefono}
-		<br>
-		<br>
-		<input type="button" name="conferma" onclick="location.href='newAllievo'" value="Conferma">
-		<input type="button" name="indietro" onclick="location.href='addAllievo'"value="Modifica">
+		<input type="button" name="conferma" onclick="location.href='newCentro'" value="Conferma">
+		<input type="button" name="indietro" onclick="location.href='addCentro'"value="Modifica">
 		<br>
 		<br>
 		<br>

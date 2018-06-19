@@ -27,6 +27,8 @@ public interface AttivitaRepository extends CrudRepository<Attivita, Long> {
 	void delete(Attivita attivita);
 	
 	public List<Attivita> findAll();
+	
+	public List<Attivita> findByNomeAndData(String nome, Date date);
 
 
 }

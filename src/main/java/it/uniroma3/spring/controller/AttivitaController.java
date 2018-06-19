@@ -1,7 +1,6 @@
 package it.uniroma3.spring.controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.spring.model.Allievo;
 import it.uniroma3.spring.model.Attivita;
-import it.uniroma3.spring.model.Azienda;
+import it.uniroma3.spring.model.Centro;
+import it.uniroma3.spring.model.Responsabile;
 import it.uniroma3.spring.service.AllievoService;
 import it.uniroma3.spring.service.AttivitaService;
 import it.uniroma3.spring.service.AziendaService;
@@ -39,7 +40,7 @@ public class AttivitaController {
 	@Autowired
 	AllievoService allievoService;
 
-	@RequestMapping("/attivita")
+	@GetMapping("/attivita")
 	public String attivita(Model model, HttpSession session) {
 		model.addAttribute("attivita", this.attivitaService.findAll());
 		return "attivitaList";
@@ -49,16 +50,17 @@ public class AttivitaController {
 	@RequestMapping("/addAttivita")
 	public String addAttivita(Model model, HttpSession session) {
 
-		Azienda azienda = aziendaService.findById(1);
+		Responsabile res = (Responsabile) session.getAttribute("responsabile");
+	
 		Attivita attivita = new Attivita();
-
+		
 		model.addAttribute("attivita1", attivita);
 		return "attivitaForm";
 	}
 
 	@RequestMapping(value = "/attivita/{id}", method = RequestMethod.GET)
 	public String getAttivita(@PathVariable("id") Long id, Model model, HttpSession session) {
-		
+
 		Attivita att = attivitaService.findById(id);
 		session.setAttribute("attivitaB", att);
 		List<Allievo> allievi = AllieviNotAttivita(att);
@@ -73,12 +75,13 @@ public class AttivitaController {
 		this.attivitaValidator.validate(attivita, bindingResult);
 
 		if (this.attivitaService.alreadyExists(attivita)) {
-			model.addAttribute("exists", "Attivita already exists");
+			model.addAttribute("attivitaExists", "Questa attività è già presente");
 			return "attivitaForm";
 		} else {
 			if (!bindingResult.hasErrors()) {
+			
 				session.setAttribute("attivita", attivita);
-				return "verifica-attivita";
+				return "verificaAttivita";
 			}
 		}
 		return "attivitaForm";
@@ -87,9 +90,16 @@ public class AttivitaController {
 	@RequestMapping(value = "/newAttivita", method = RequestMethod.GET)
 	public String newAttivita(HttpSession session, Model model) {
 		Attivita att = (Attivita) session.getAttribute("attivita");
+		Responsabile re=(Responsabile)session.getAttribute("responsabileCentro");
+
+	
+		Centro c1=re.getCentro();
+		att.setCentro(c1);
 		this.attivitaService.save(att);
 		return "pagina-iniziale-centro";
 	}
+
+	
 
 	@RequestMapping("/addAllievoAttivita")
 	public String allieviAttivita(Model model, HttpSession session) {
@@ -120,20 +130,27 @@ public class AttivitaController {
 		List<Allievo> all = allievoService.findAll();
 		List<Allievo> all1 = allievoService.findAllByAttivita(attivita);
 		List<Allievo> allievi = new ArrayList();
-		for(Allievo allievo:all) {
-			if(!all1.contains(allievo)) {
+		for (Allievo allievo : all) {
+			if (!all1.contains(allievo)) {
 				allievi.add(allievo);
 			}
 		}
-		
-		return allievi;
-	
-			
-				}
-				
-				
 
-			
-		
-		
+		return allievi;
+
 	}
+	@RequestMapping(value = "/deleteAttivita/attivitaDelete/{id}", method = RequestMethod.GET)
+	public String deleteAttivita(@PathVariable("id") Long id, Model model, HttpSession session) {
+		Attivita att = attivitaService.findById(id);
+		attivitaService.delete(att);
+		return "lista-attivita-da-eliminare";
+	}
+
+	@RequestMapping("/deleteAttivita")
+	public String removeAttivita(Model model, HttpSession session) {
+		Responsabile res = (Responsabile) session.getAttribute("responsabileCentro");
+		Centro centro = res.getCentro();
+		model.addAttribute("attivitaDel", attivitaService.findByCentro(centro));
+		return "lista-attivita-da-eliminare";
+	}
+}

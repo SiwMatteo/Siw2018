@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -25,17 +24,16 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
+						<li class="active"><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
 								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato nel centro ${centro.nome} , dal responsabile ${responsabile.nome} </p>
+		<div>Login effettuato nel centro ${centro.nome}, dal responsabile ${responsabileCentro.nome}</div> 
 		<br>
 		<br>
 		<a href="addAllievo">Inserisci un nuovo Allievo</a> 
@@ -47,6 +45,10 @@
 		<br>
 		<br>
 		<a href="/addAllievoAttivita">Registra un allievo ad un'attività</a>
+		<br>
+		<br>
+		<br>
+		<a href="/deleteAttivita">Elimina un'attività</a>
 		<br>
 		<br>
 		<br>

@@ -20,27 +20,29 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
+						<li><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
 								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="page-wrapper">
+		<div><font color="yellow">${attivitaExists}</font></div>
+		<br>
+		<br>
 			<form:form action="attivita" modelAttribute="attivita1">
 				Nome: <form:input path="nome" />
-				<form:errors path="nome"/>
+				<font color="yellow"><form:errors path="nome"/></font>
 				<br>
 				<br>
 				Descrizione: <form:input path="descrizione" />
-				<form:errors path="descrizione"/>
+				<font color="yellow"><form:errors path="descrizione"/></font>
 				<br>
 				<br>
 				Data : <form:input path="data" type="date" />
-				<form:errors path="data"/> 
+				<font color="yellow"><form:errors path="data"/></font>
 				<br>
 				<br>
 				<br>

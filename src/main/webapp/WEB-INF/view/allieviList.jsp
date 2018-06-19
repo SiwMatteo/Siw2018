@@ -26,10 +26,9 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
+						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage Azienda</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
 								Direttore</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>

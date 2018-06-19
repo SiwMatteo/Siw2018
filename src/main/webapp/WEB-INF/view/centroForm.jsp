@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Verifica Attività</title>
+<title>Inserisci Centro</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
@@ -23,34 +24,40 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
-								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
+						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage Azienda</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
+								Direttore</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<div id="page-wrapper">
-			Nome: ${attivita.nome}
-			<br>
-			<br>
-   			 Descrizione: ${attivita.descrizione}
-			<br>
-			<br>
-    		 Data: ${attivita.data}
-			<br>
-			<br>
-			<br>
-			<input type="button" name="conferma" onclick="location.href='newAttivita'" value="Conferma">
-			<input type="button" name="indietro" onclick="location.href='addAttivita'" value="Modifica">
-			<br>
-			<br>
+		<div><font color="yellow">${centroExists}</font></div>
+		<br>
+		<br> 
+		<form:form action="centro" modelAttribute="centro1">
+			Nome: <form:input path="nome" />
+			<font color="yellow"><form:errors path="nome"/></font>
 			<br>
 			<br> 
-	</div>
-	<div id="copyright" class="container">
+			Indirizzo: <form:input path="indirizzo" />
+			<font color="yellow"><form:errors path="indirizzo" /></font>
+			<br>
+			<br>
+			Email: <form:input path="email" />
+			<font color="yellow"><form:errors path="email" /></font>
+			<br>
+			<br>
+			<br>
+			 <input type="submit" name="invia">
+			<br>
+			<br>
+			<br>
+		</form:form>
+		</div>
+		<div id="copyright" class="container">
 		<p>
 			&copy; Untitled. All rights reserved. | Photos by <a
 				href="http://fotogrph.com/">Fotogrph</a> | Design by <a

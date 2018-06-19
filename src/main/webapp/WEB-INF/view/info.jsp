@@ -24,8 +24,7 @@
 				<div id="menu">
 					<ul>
 						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Login
-								Responsabile</a></li>
+						
 						<li class="active"><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>

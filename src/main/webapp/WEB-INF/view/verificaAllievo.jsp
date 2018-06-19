@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Resgistra Allievo ad Attività</title>
+<title>Verifica Allievo</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<link href="/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link
+	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
+	rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div id="header-wrapper">
@@ -31,16 +32,27 @@
 			</div>
 		</div>
 	</div>
-	<div id="welcome" class="container">
-		<p>Login effettuato nel centro ${centro.nome} , dal responsabile ${responsabile.nome} </p>
+	<div id="page-wrapper">
+		Codice Fiscale: ${allievo.codiceFiscale}
 		<br>
 		<br>
-		<c:forEach items="${allievi}" var="allievo">
-		<ul>
-			<li><a href="attivitaAllievo/${allievo.codiceFiscale}">${allievo.nome}</a></li>
-		</ul>
-	</c:forEach>
+		Nome: ${allievo.nome}
 		<br>
+		<br>
+		Cognome: ${allievo.cognome}
+		<br>
+		<br>
+		Data di nascita: ${allievo.dataDiNascita}
+		<br>
+		<br>
+		Luogo di nascita: ${allievo.luogoDiNascita}
+		<br>
+		<br>
+		Telefono: ${allievo.telefono}
+		<br>
+		<br>
+		<input type="button" name="conferma" onclick="location.href='newAllievo'" value="Conferma">
+		<input type="button" name="indietro" onclick="location.href='addAllievo'"value="Modifica">
 		<br>
 		<br>
 		<br>

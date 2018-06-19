@@ -87,9 +87,4 @@ public class Attivita{
 	public void setCentro(Centro centro) {
 		this.centro = centro;
 	}
-
-
-	
-	
-	
 }

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.spring.model.Allievo;
 import it.uniroma3.spring.model.Attivita;
+import it.uniroma3.spring.model.Centro;
 import it.uniroma3.spring.repository.AttivitaRepository;
 
 
@@ -45,11 +46,16 @@ public class AttivitaService {
 	}
 
 	public boolean alreadyExists(Attivita attivita) {
-		List<Attivita> listaattivita = this.findAll();
-		if (listaattivita.contains(attivita)) {
+		List<Attivita> att = this.attivitaRepository.findByNomeAndData( attivita.getNome(), attivita.getData());
+		if (att.size()!=0) {
 			return true;
 		}
 		return false;
+	}
+
+	public List<Attivita> findByCentro(Centro centro) {
+		// TODO Auto-generated method stub
+		return attivitaRepository.findByCentro(centro);
 	}
 
 

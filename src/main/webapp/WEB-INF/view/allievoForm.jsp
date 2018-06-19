@@ -24,10 +24,9 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
+						<li><a href="/pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
 								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>
@@ -35,29 +34,32 @@
 	</div>
 	
 	<div id="page-wrapper">
+		<div><font color="yellow">${allievoExists}</font></div>
+		<br>
+		<br>
 		<form:form action="allievo" modelAttribute="allievo1">
 			Codice Fiscale: <form:input path="codiceFiscale" />
-			<form:errors path="codiceFiscale"/>
+			<font color="yellow"><form:errors path="codiceFiscale"/></font>
 			<br>
 			<br> 
 			Nome: <form:input path="nome" />
-			<form:errors path="nome" />
+			<font color="yellow"><form:errors path="nome" /></font>
 			<br>
 			<br>
 			Cognome: <form:input path="cognome" />
-			<form:errors path="cognome" />
+			<font color="yellow"><form:errors path="cognome" /></font>
 			<br>
 			<br>
 			Data di nascita: <form:input path="dataDiNascita" type="date" />
-			<form:errors path="dataDiNascita" />
+			<font color="yellow"><form:errors path="dataDiNascita" /></font>
 			<br>
 			<br>
 			Luogo di nascita: <form:input path="luogoDiNascita" />
-			<form:errors path="luogoDiNascita" />
+			<font color="yellow"><form:errors path="luogoDiNascita" /></font>
 			<br>
 			<br>
 			Telefono: <form:input path="telefono" />
-			<form:errors path="telefono" />
+			<font color="yellow"><form:errors path="telefono" /></font>
 			<br>
 			<br>
 			<br>

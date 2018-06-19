@@ -37,12 +37,27 @@ public class MainController {
 		Responsabile r = new Responsabile();
 		model.addAttribute("responsabile", r);
 		return "login";
-
+	}
+	
+	@RequestMapping("/logout")
+	public String Login(HttpSession session) {
+		session.setAttribute("responsabile", null);
+		return "login";
 	}
 
 	@RequestMapping("/info")
 	public String PageInfo() {
 		return "info";
+	}
+	
+	@RequestMapping("/pagina-iniziale-centro")
+	public String PageCentro() {
+		return "pagina-iniziale-centro";
+	}
+	
+	@RequestMapping("/pagina-iniziale-azienda")
+	public String PageAzienda() {
+		return "pagina-iniziale-azienda";
 	}
 
 	@RequestMapping("/processlogin")
@@ -53,25 +68,24 @@ public class MainController {
 			return "login";
 		} else {
 			try {
-				Responsabile c = responsabileService.findByEmail(responsabile.getEmail());
-				System.out.println(c.getEmail());
-				System.out.println(c.getPassword());
-				Centro centro = c.getCentro();
-				
-				if (responsabile.getPassword().equals(c.getPassword())) {
-					if (c.getRuolo().equals("direttore")) {
-						session.setAttribute("responsabileAzienda", responsabile);
+				Responsabile res = responsabileService.findByEmail(responsabile.getEmail());
+			
+				if (responsabile.getPassword().equals(res.getPassword())) {
+					if (res.getRuolo().equals("direttore")) {
+						session.setAttribute("responsabileAzienda", res);
+						
 						return "pagina-iniziale-azienda";
 
-					} else
-						session.setAttribute("responsabileCentro", responsabile);
+					}else {
+						System.out.println("ho aggiunto l'oggetto");
+						session.setAttribute("responsabileCentro", res);;
+					}
 
-					session.setAttribute("centro", centro);
+					session.setAttribute("centro", responsabile.getCentro());
 					return "pagina-iniziale-centro";
 
 				} else
-					model.addAttribute("errPassw", "la password inserita risulta sbagliata");
-				return "login";
+					return "login";
 
 			} catch (Exception e) {
 				model.addAttribute("errMail", "la mail inserita risulta sbagliata");

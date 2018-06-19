@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MF Info</title>
+<title>Iscrizione ad Attività</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
@@ -23,10 +23,9 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="/" accesskey="1" title="">Homepage</a></li>
-						<li><a href="login" accesskey="2" title="">Logout
+						<li><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
 								Responsabile</a></li>
-						<li><a href="/info" accesskey="3" title="">Info</a></li>
 					</ul>
 				</div>
 			</div>

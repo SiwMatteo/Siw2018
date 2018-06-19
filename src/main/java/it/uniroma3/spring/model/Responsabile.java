@@ -2,6 +2,7 @@ package it.uniroma3.spring.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -44,7 +45,7 @@ public class Responsabile {
 	
 	
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
@@ -55,7 +56,7 @@ public class Responsabile {
 	public String getPassword() {
 	
 		
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -67,7 +68,7 @@ public class Responsabile {
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
@@ -75,7 +76,7 @@ public class Responsabile {
 	}
 
 	public String getCognome() {
-		return cognome;
+		return this.cognome;
 	}
 
 	public void setCognome(String cognome) {
@@ -100,7 +101,7 @@ public class Responsabile {
 
 
 	public Centro getCentro() {
-		return centro;
+		return this.centro;
 	}
 
 	public void setCentro(Centro centro) {

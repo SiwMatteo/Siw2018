@@ -14,12 +14,13 @@ public interface CentroRepository extends CrudRepository<Centro, Integer> {
 
 	public List<Centro> findAll();
 
-	
-	
 	void deleteByNome(String nome);
+
 	void delete(Centro centro);
+
 	void deleteById(Long id);
 
 	public Centro findById(int id);
+
 	public Centro findByEmail(String email);
 }
