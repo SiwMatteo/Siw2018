@@ -34,6 +34,8 @@
 	</div>
 	
 	<div id="page-wrapper">
+		<p>Registra un nuovo Centro</p>
+		<br>
 		<div><font color="yellow">${centroExists}</font></div>
 		<br>
 		<br> 

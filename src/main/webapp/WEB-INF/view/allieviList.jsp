@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,9 +14,18 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
 	rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
+ <style>
+table  { 
+    border-collapse:collapse
+}
+td, th { 
+    border:1px solid #ddd;
+    padding:8px;
+}
+</style>
 <body>
 	<div id="header-wrapper">
 		<div id="header" class="container">
@@ -26,7 +35,8 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage Azienda</a></li>
+						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage
+								Azienda</a></li>
 						<li><a href="logout" accesskey="2" title="">Logout
 								Direttore</a></li>
 					</ul>
@@ -35,17 +45,26 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato dal direttore ${responsabile.nome} </p>
-		<br>
-		<br>
+		<p>Lista degli allievi presenti in tutti i centri</p>
+		<br>  
+		<table align="center">
+		 <tr>
+		 <td>Codice Fiscale</td><td>Nome</td><td>Cognome</td><td>Telefono</td><td></td></tr>
 		<c:forEach items="${allievi}" var="allievo">
-   			<div >${allievo.nome}</div>
-   			<br>
-		</c:forEach>
-		<br>
-		<br>
-		<br>
-		<br>
+			<ul>
+		<tr>
+		    <td>${allievo.codiceFiscale}</td>
+		    <td>${allievo.nome}</td>
+			<td>${allievo.cognome}</td>
+			<td>${allievo.telefono}</td>
+		</tr>
+				</ul>
+				</c:forEach> 
+				</table>
+				<br> 
+				<br>
+				<br> 
+				<br>
 	</div>
 	<div id="copyright" class="container">
 		<p>

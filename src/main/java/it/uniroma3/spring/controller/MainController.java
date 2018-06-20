@@ -72,7 +72,7 @@ public class MainController {
 			
 				if (responsabile.getPassword().equals(res.getPassword())) {
 					if (res.getRuolo().equals("direttore")) {
-						session.setAttribute("responsabileAzienda", res);
+						session.setAttribute("responsabile", res);
 						
 						return "pagina-iniziale-azienda";
 

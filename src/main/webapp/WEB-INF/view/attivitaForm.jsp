@@ -29,6 +29,8 @@
 		</div>
 	</div>
 	<div id="page-wrapper">
+	<p>Inserisci una nuova Attività</p>
+		<br>
 		<div><font color="yellow">${attivitaExists}</font></div>
 		<br>
 		<br>
@@ -41,8 +43,11 @@
 				<font color="yellow"><form:errors path="descrizione"/></font>
 				<br>
 				<br>
-				Data : <form:input path="data" type="date" />
+				Data: <form:input path="data" type="date" />
 				<font color="yellow"><form:errors path="data"/></font>
+				<br>
+				<br>
+				Ora Inizio: <form:input path="ora" type="time"/>
 				<br>
 				<br>
 				<br>

@@ -34,6 +34,8 @@
 	</div>
 	
 	<div id="page-wrapper">
+		<p>Inserisci un nuovo Allievo</p>
+		<br>
 		<div><font color="yellow">${allievoExists}</font></div>
 		<br>
 		<br>

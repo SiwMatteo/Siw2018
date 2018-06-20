@@ -96,7 +96,7 @@ public class AttivitaController {
 		Centro c1=re.getCentro();
 		att.setCentro(c1);
 		this.attivitaService.save(att);
-		return "pagina-iniziale-centro";
+		return "/pagina-iniziale-centro";
 	}
 
 	
@@ -143,14 +143,14 @@ public class AttivitaController {
 	public String deleteAttivita(@PathVariable("id") Long id, Model model, HttpSession session) {
 		Attivita att = attivitaService.findById(id);
 		attivitaService.delete(att);
-		return "lista-attivita-da-eliminare";
+		return "/pagina-iniziale-centro";
 	}
 
 	@RequestMapping("/deleteAttivita")
 	public String removeAttivita(Model model, HttpSession session) {
 		Responsabile res = (Responsabile) session.getAttribute("responsabileCentro");
 		Centro centro = res.getCentro();
-		model.addAttribute("attivitaDel", attivitaService.findByCentro(centro));
+		session.setAttribute("attivitaDel", attivitaService.findByCentro(centro));
 		return "lista-attivita-da-eliminare";
 	}
 }

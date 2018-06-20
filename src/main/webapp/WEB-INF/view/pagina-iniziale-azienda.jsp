@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato dal direttore ${responsabile.nome} </p>
+		<p>Login effettuato dal Direttore ${responsabile.nome}  ${responsabile.cognome}</p>
 		<br>
 		<br>
 		<a href="/allievi">Lista Allievi</a> 

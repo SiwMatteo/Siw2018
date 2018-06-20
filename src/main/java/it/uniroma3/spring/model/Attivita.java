@@ -33,6 +33,10 @@ public class Attivita{
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date data;
 	
+	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "HH:mm")
+	private Date ora;
+	
 	@ManyToOne
 	private Centro centro;
 	
@@ -87,4 +91,13 @@ public class Attivita{
 	public void setCentro(Centro centro) {
 		this.centro = centro;
 	}
+
+	public Date getOra() {
+		return ora;
+	}
+
+	public void setOra(Date ora) {
+		this.ora = ora;
+	}
+	
 }

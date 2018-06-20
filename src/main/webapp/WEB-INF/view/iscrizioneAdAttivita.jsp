@@ -14,6 +14,15 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
+ <style>
+table  { 
+    border-collapse:collapse
+}
+td, th { 
+    border:1px solid #ddd;
+    padding:8px;
+}
+</style>
 <body>
 	<div id="header-wrapper">
 		<div id="header" class="container">
@@ -32,20 +41,26 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato nel centro ${centro.nome} , dal responsabile ${responsabile.nome} </p>
+		
 		<br>
 		<br>
+		<table align="center">
+		<tr>
+			<td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora Inizio</td><td></td>
+		</tr>
 		<c:forEach items="${attivita1}" var="attivita">
 			<ul>
-				<table align="center">
+				
 					<tr>
 						<td>${attivita.nome}</td>
 						<td>${attivita.descrizione}</td>
-						<td><button name="nome" onclick="location.href='attivita/${attivita.id}'">selezione</button></td>
-					</tr>
-				</table>
+						<td>${attivita.data}</td>
+						<td>${attivita.ora}</td>
+						<td><button name="nome" onclick="location.href='attivita/${attivita.id}'">seleziona</button></td>
+					</tr>				
 			</ul>
 		</c:forEach>
+		</table>
 		<br>
 		<br>
 		<br>

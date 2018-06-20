@@ -7,13 +7,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Resgistra Allievo ad Attività</title>
+<title>Registra Allievo ad Attività</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
 <link href="/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
+
+ <style>
+table  { 
+    border-collapse:collapse
+}
+td, th { 
+    border:1px solid #ddd;
+    padding:8px;
+}
+</style>
+
 <body>
 	<div id="header-wrapper">
 		<div id="header" class="container">
@@ -23,8 +34,8 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
-						<li><a href="logout" accesskey="2" title="">Logout
+						<li><a href="/pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
+						<li><a href="/logout" accesskey="2" title="">Logout
 								Responsabile</a></li>
 					</ul>
 				</div>
@@ -32,14 +43,23 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato nel centro ${centro.nome} , dal responsabile ${responsabile.nome} </p>
 		<br>
 		<br>
+		<table align="center">
+		 <tr>
+		 <td>Codice Fiscale</td><td>Nome</td><td>Cognome</td><td>Telefono</td><td></td>
+		 </tr>
 		<c:forEach items="${allievi}" var="allievo">
 		<ul>
-			<li><a href="attivitaAllievo/${allievo.codiceFiscale}">${allievo.nome}</a></li>
+		<tr>
+		    <td>${allievo.codiceFiscale}</td>
+		    <td>${allievo.nome}</td>
+			<td>${allievo.cognome}</td>
+			<td>${allievo.telefono}</td>
+			<td><button name="nome" onclick="location.href='attivitaAllievo/${allievo.codiceFiscale}'">seleziona</button></td>
 		</ul>
 	</c:forEach>
+	</table>
 		<br>
 		<br>
 		<br>

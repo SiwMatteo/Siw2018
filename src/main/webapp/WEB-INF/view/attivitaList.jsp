@@ -17,6 +17,15 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
+ <style>
+table  { 
+    border-collapse:collapse
+}
+td, th { 
+    border:1px solid #ddd;
+    padding:8px;
+}
+</style>
 <body>
 	<div id="header-wrapper">
 		<div id="header" class="container">
@@ -35,15 +44,25 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato dal direttore ${responsabile.nome} </p>
-		<br>
-		<br>
+		<p>Lista delle attivita presenti in tutti i centri</p>
+		<br>  
+		<table align="center">
+		 <tr><td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora inizio</td></tr>
 		<c:forEach items="${attivita}" var="attivita">
-			<div >${attivita.nome}</div>
-			<div >${attivita.descrizione}</div>
-			<div >${attivita.data}</div>
-			<br>
-		</c:forEach>
+					<ul>
+							
+								<tr>
+									<td>${attivita.nome}</td>
+									<td>${attivita.descrizione}</td>
+									<td>${attivita.data}</td>
+									<td>${atstivita.ora}</td>
+
+								</tr>
+							
+
+							</ul>
+				</c:forEach> 
+				</table>
 		<br>
 		<br>
 		<br>

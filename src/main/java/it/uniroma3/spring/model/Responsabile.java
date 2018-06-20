@@ -24,13 +24,13 @@ public class Responsabile {
 	@Column(nullable = false)
 	private String password;
 
-	@Column
+	@Column(nullable = false)
 	private String nome;
 
-	@Column
+	@Column(nullable = false)
 	private String cognome;
 
-	@Column
+	@Column(nullable = false)
 	private Integer numero;
 
 	@Column(nullable = false)
