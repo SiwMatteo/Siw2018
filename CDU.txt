@@ -1,0 +1,82 @@
+PROGETTO SIW AVANZATO 2017/18
+Francesco Forgione 502243
+Matteo De Santis 500355
+
+--CASI D'USO--
+
+UC1 - Inserisci Allievo. Attore primario: Un Responsabile:
+Scenario principale di successo:
+1. L'Allievo vuole registrarsi al Sistema.
+2. Il Responsabile inizia un nuovo inserimento Allievo.
+3. L'Allievo fornisce i propri dati.
+4. Il Responsabile inserisce i dati dell'Allievo nel Sistema.
+5. Il Sistema verifica se l'Allievo non è già presente nel database.
+6. Il Sistema mostra i dati dell'Allievo e ne chiede la conferma.
+7. Il Responsabile conferma i dati inseriti.
+8. Il Sistema registra l'Allievo nel database.
+9. Il Responsabile comunica l'avventa iscrizione all'Allievo.
+
+
+UC2 - Inserisci Attività. Attore primario: Un Responsabile.
+Scenario principale di successo:
+1. Il Responsabile intende registrare una nuova Attività.
+2. Il Responsabile inizia un nuovo inserimento Attività.
+3. Il Responsabile inserisce nome, descrizione, data e ora inizio dell'attività.
+4. Il Sistema verifica se l'Attività non è già presente nel database.
+5. Il Sistema mostra i dati dell'Attività e ne chiede la conferma.
+6. Il Responsabile conferma i dati inseriti.
+7. Il Sistema registra l'Attività nel database.
+
+
+UC3 - Registra Allievo ad Attività. Attore primario: Un Responsabile.
+Scenario principale di successo:
+1. L'Allievo vuole iscriversi ad un'Attività.
+2. Il Responsabile inizia una registrazione Allievo ad un'Attività.
+3. Il Sistema resituisce la lista delle Attività registrate.
+4. L'Allievo indica al Responsabile l'Attività al quale vuole partecipare.
+5. Il Responsabile seleziona l'Attività scelta.
+6. Il Sistema resituisce la lista degli Allievi registrati.
+7. Il Responsabile seleziona l'Allievo in questione.
+8. Il Sistema registra l'iscrizione dell'Allievo all'Attività.
+
+
+
+UC4 - Elimina Attività. Attore primario: Un Responsabile.
+Scenario principale di successo:
+1. Il Responsabile inizia un'eliminazione Attività.
+2. Il Sistema restituisce la lista delle Attività registrate.
+3. Il Responsabile seleziona l'Attività da eliminare.
+4. Il sistema elimina l'Attività scelta dal database.
+
+
+
+UC5 - Mostra Lista Allievi. Attore primario: Un Direttore.
+Scenario principale di successo:
+1. Il Direttore seleziona l'opzione Lista Allievi.
+2. Il Sistema mostra la lista degli allievi(e i loro attributi) di tutti i Centri.
+
+
+UC6 - Ricerca Allievo. Attore primario: Un Direttore.
+Scenario principale di successo:
+1. Il Direttore vuole cercare un Allievo registrato.
+2. Il Direttore inizia una nuova Ricerca Allievo.
+3. Il Direttore inserisce il codice fiscale dell'Allievo ricercato.
+4. Il Sistema restituisce i dati dell'Allievo registrato nel database.
+
+
+UC7 - Mostra Lista Attività. Attore primario: Un Direttore:
+Scenario principale di successo:
+1. Il Direttore seleziona l'opzione Lista Attività.
+2. Il Sistema mostra la lista delle Attività(e i loro attributi) di tutti i Centri.
+
+
+UC8 - Inserisci Centro. Attore primario: Un Direttore.
+Scenario principale di successo
+1. Il Direttore vuole registrare un nuovo Centro.
+2. Il Direttore inizia una nuovo inserimento Centro.
+3. Il Direttore inserisce i dati del Centro nel Sistema.
+4. Il Sistema mostra i dati del Centro e ne chiede la conferma.
+5. Il Responsabile conferma i dati inseriti.
+6. Il Sistema registra in Centro nel database.
+
+
