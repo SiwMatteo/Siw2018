@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -7,14 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Pagina Centro</title>
+<title>Inserisci Allievo</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link
 	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
 	rel="stylesheet" />
-<link href="/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div id="header-wrapper">
@@ -25,40 +24,28 @@
 				</h1>
 				<div id="menu">
 					<ul>
-						<li class="active"><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage Centro</a></li>
-						<li><a href="/logout" accesskey="2" title="">Logout
-								Responsabile</a></li>
+						<li><a href="/pagina-iniziale-azienda" accesskey="1" title="">Homepage Azienda</a></li>
+						<li><a href="logout" accesskey="2" title="">Logout
+								Direttore</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	
 	<div id="page-wrapper">
-		<div id="welcome" class="container">
-			<div> Login effettuato nel centro ${centro.nome}, dal responsabile ${responsabileCentro.nome} ${responsabileCentro.cognome}</div>
-			<br>
-			<br>
-			<a href="addAllievo">Inserisci un nuovo Allievo</a> 
-			<br>
-			<br>
-			<br>
-			<a href="/addAttivita">Inserisci una nuova Attività</a>
-			<br>
-			<br>
-			<br>
-			<a href="/addAllievoAttivita">Registra un Allievo ad un'Attività</a>
-			<br>
-			<br>
-			<br>
-			<a href="/deleteAttivita">Elimina un' Attività</a>
-			<br>
-			<br>
-			<br>
-			<br>
+		<p>Ricerca Allievo</p>
+		<br>
+		<br>
+		<form action="AllievoByCF" method="get">
+			Inserisci Codice Fiscale: <input type="text" name="codiceFiscale"/>
+			 <input type="submit" name="submit" value="ricerca">
+		</form>
+		<br>
+		<br>
+		<br>
 		</div>
-	</div>
-	<div id="copyright" class="container">
+		<div id="copyright" class="container">
 		<p>
 			&copy; Untitled. All rights reserved. | Photos by <a
 				href="http://fotogrph.com/">Fotogrph</a> | Design by <a

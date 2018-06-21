@@ -19,7 +19,7 @@ import it.uniroma3.spring.validator.CentroValidator;
 
 @Controller
 public class CentroController {
-	
+
 	@Autowired
 	CentroService centroService;
 	@Autowired
@@ -30,7 +30,7 @@ public class CentroController {
 		return centroService.findById(id);
 
 	}
-	
+
 	@RequestMapping("/centri")
 	public String allievi(Model model, HttpSession session) {
 		model.addAttribute("centri", this.centroService.findAll());
@@ -41,12 +41,12 @@ public class CentroController {
 	@RequestMapping("/addCentro")
 	public String addAllievo(Model model, HttpSession session) {
 
-		Centro centro = new Centro();	
-		
+		Centro centro = new Centro();
+
 		model.addAttribute("centro1", centro);
 		return "centroForm";
 	}
-	
+
 	@RequestMapping(value = "/centro", method = RequestMethod.POST)
 	public String verificaAllievo(@Valid @ModelAttribute("centro1") Centro centro, HttpSession session,
 			BindingResult bindingResult, Model model) {
@@ -69,7 +69,7 @@ public class CentroController {
 		return "centroForm";
 
 	}
-	
+
 	@RequestMapping(value = "/newCentro", method = RequestMethod.GET)
 	public String newCentro(HttpSession session, Model model) {
 

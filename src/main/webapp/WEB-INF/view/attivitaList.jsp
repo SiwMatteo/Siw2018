@@ -47,7 +47,7 @@ td, th {
 		<p>Lista delle attivita presenti in tutti i centri</p>
 		<br>  
 		<table align="center">
-		 <tr><td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora inizio</td></tr>
+		 <tr><td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora inizio</td><td>Centro</td></tr>
 		<c:forEach items="${attivita}" var="attivita">
 					<ul>
 							
@@ -55,7 +55,8 @@ td, th {
 									<td>${attivita.nome}</td>
 									<td>${attivita.descrizione}</td>
 									<td>${attivita.data}</td>
-									<td>${atstivita.ora}</td>
+									<td>${attivita.ora}</td>
+									<td>${attivita.centro.nome}</td>
 
 								</tr>
 							

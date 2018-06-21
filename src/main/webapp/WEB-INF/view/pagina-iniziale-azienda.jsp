@@ -34,10 +34,14 @@
 		</div>
 	</div>
 	<div id="welcome" class="container">
-		<p>Login effettuato dal Direttore ${responsabile.nome}  ${responsabile.cognome}</p>
+		<p>Login effettuato dal Direttore ${responsabileAzienda.nome}  ${responsabileAzienda.cognome}</p>
 		<br>
 		<br>
 		<a href="/allievi">Lista Allievi</a> 
+		<br>
+		<br>
+		<br>
+		<a href="/findAllievoByCF">Ricerca Allievo</a>
 		<br>
 		<br>
 		<br>

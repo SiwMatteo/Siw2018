@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.spring.model.Allievo;
 import it.uniroma3.spring.service.AllievoService;
@@ -84,5 +85,23 @@ public class AllievoController {
 		allievoService.save(all);
 
 		return "pagina-iniziale-centro";
+	}
+	
+	@RequestMapping("/findAllievoByCF")
+	public String findAllievoByCF() {
+		return "nomeAllievoForm";
+	}
+	
+	@RequestMapping("/AllievoByCF")
+	public String returnAllievo(@RequestParam ("codiceFiscale") String codiceFiscale, Model model) {
+		Allievo allievo = allievoService.findbyCodiceFiscale(codiceFiscale);
+		if(allievo==null) {
+			model.addAttribute("allievoNonTrovato", "Non è stato trovato nessun Allievo");
+			return "risultatiRicerca";
+		}
+		else {
+			model.addAttribute("allievoTrovato", allievo);
+			return "risultatiRicerca";
+		}
 	}
 }

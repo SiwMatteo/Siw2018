@@ -35,10 +35,10 @@ td, th {
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage
-								Azienda</a></li>
+						<li><a href="pagina-iniziale-centro" accesskey="1" title="">Homepage
+								Centro</a></li>
 						<li><a href="logout" accesskey="2" title="">Logout
-								Direttore</a></li>
+								Responsabile</a></li>
 					</ul>
 				</div>
 			</div>
@@ -49,20 +49,21 @@ td, th {
 		<br>  
 		<table align="center">
 		 <tr>
-			<td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora Inizio</td>
+			<td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora Inizio</td><td>Centro</td>
 		</tr>
-		<c:forEach items="${attivitaDel}" var="attivita">
+			<c:forEach items="${attivitaDel}" var="attivita">
 			<ul>
-		<tr>
-		    <td>${attivita.nome}</td>
-		    <td>${attivita.descrizione}</td>
-			<td>${attivita.data}</td>
-			<td>${attivita.ora}</td>
-			<td><button name="nome" onclick="location.href='deleteAttivita/attivitaDelete/${attivita.id}'">seleziona</button></td>
-		</tr>
-				</ul>
+				<tr>
+		   			 <td>${attivita.nome}</td>
+		    			<td>${attivita.descrizione}</td>
+						<td>${attivita.data}</td>
+						<td>${attivita.ora}</td>
+						<td>${attivita.centro.nome}</td>
+						<td><button name="nome" onclick="location.href='deleteAttivita/attivitaDelete/${attivita.id}'">seleziona</button></td>
+				</tr>
+			</ul>
 				</c:forEach> 
-				</table>
+		</table>
 				<br> 
 				<br>
 				<br> 

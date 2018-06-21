@@ -46,7 +46,7 @@ td, th {
 		<br>
 		<table align="center">
 		<tr>
-			<td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora Inizio</td><td></td>
+			<td>Nome</td><td>Descrizione</td><td>Data</td><td>Ora Inizio</td><td>Centro</td>
 		</tr>
 		<c:forEach items="${attivita1}" var="attivita">
 			<ul>
@@ -56,6 +56,7 @@ td, th {
 						<td>${attivita.descrizione}</td>
 						<td>${attivita.data}</td>
 						<td>${attivita.ora}</td>
+						<td>${attivita.centro.nome}</td>
 						<td><button name="nome" onclick="location.href='attivita/${attivita.id}'">seleziona</button></td>
 					</tr>				
 			</ul>

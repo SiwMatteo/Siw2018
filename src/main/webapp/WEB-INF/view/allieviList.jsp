@@ -35,9 +35,9 @@ td, th {
 				</h1>
 				<div id="menu">
 					<ul>
-						<li><a href="pagina-iniziale-azienda" accesskey="1" title="">Homepage
+						<li><a href="/pagina-iniziale-azienda" accesskey="1" title="">Homepage
 								Azienda</a></li>
-						<li><a href="logout" accesskey="2" title="">Logout
+						<li><a href="/logout" accesskey="2" title="">Logout
 								Direttore</a></li>
 					</ul>
 				</div>
@@ -49,7 +49,7 @@ td, th {
 		<br>  
 		<table align="center">
 		 <tr>
-		 <td>Codice Fiscale</td><td>Nome</td><td>Cognome</td><td>Telefono</td><td></td></tr>
+		 <td>Codice Fiscale</td><td>Nome</td><td>Cognome</td><td>Telefono</td></tr>
 		<c:forEach items="${allievi}" var="allievo">
 			<ul>
 		<tr>
